@@ -1,0 +1,44 @@
+Calibrar AutoLeveling
+
+ Ver offset
+ M503
+ 
+ Load default
+ M502
+ Save
+ M500
+ 
+ Pasos
+ 
+ * Calibrar sensor
+  -Hacerlo manual
+  
+ *Poner offset Z a 0
+ M851 Z0
+ 
+* Hacer Homming
+ G28
+ 
+* Hacer Auto leveling
+ G29
+ 
+ * Mover al centro de la cama
+ G1 X100 Y100 Z10 F5000
+ 
+ * Desactivar software endstop
+ M211
+ M211 S0
+ 
+ * Calibrar altura
+  - Bajar hasta tocar la cama y medir con un papel
+  Vemos la posicion actual
+  M114
+  
+  * Configuramos el offset
+  M851 Z[valor obtenido]
+  
+  * guardamos 
+  M500
+  
+  * desplegamos
+  M503
